@@ -33,6 +33,7 @@ return {
       "c",
       "diff",
       "html",
+      "go",
       "javascript",
       "jsdoc",
       "json",
