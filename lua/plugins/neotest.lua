@@ -7,6 +7,8 @@ return {
       "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
       "nvim-neotest/neotest-python",
+      "mfussenegger/nvim-dap",
+      "mfussenegger/nvim-dap-python",
     },
     keys = {
       { "<leader>tt", function() require("neotest").run.run() end, desc = "Run nearest test" },
