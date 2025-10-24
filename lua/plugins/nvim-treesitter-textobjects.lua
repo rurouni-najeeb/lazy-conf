@@ -54,6 +54,12 @@ return {
     vim.keymap.set({ "x", "o" }, "as", function()
       require("nvim-treesitter-textobjects.select").select_textobject("@local.scope", "locals")
     end, { desc = "Select language scope" })
+    vim.keymap.set({ "x", "o" }, "al", function()
+      require("nvim-treesitter-textobjects.select").select_textobject("@assignment.lhs", "textobjects")
+    end, { desc = "Select lhs assignment statement" })
+    vim.keymap.set({ "x", "o" }, "ar", function()
+      require("nvim-treesitter-textobjects.select").select_textobject("@assignment.rhs", "textobjects")
+    end, { desc = "Select around assignment statement" })
     -- keymaps
     vim.keymap.set("n", "<leader>a", function()
       require("nvim-treesitter-textobjects.swap").swap_next("@parameter.inner")
