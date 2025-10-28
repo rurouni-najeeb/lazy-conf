@@ -99,6 +99,9 @@ return {
     vim.keymap.set({ "n", "x", "o" }, "<c", function()
       require("nvim-treesitter-textobjects.move").goto_previous_start("@class.outer", "textobjects")
     end, { desc = "Go to previous class start" })
+    vim.keymap.set({ "n", "x", "o" }, "<z", function()
+      require("nvim-treesitter-textobjects.move").goto_previous_start("@fold", "folds")
+    end, { desc = "Go to previous fold start" })
 
     vim.keymap.set({ "n", "x", "o" }, "<M", function()
       require("nvim-treesitter-textobjects.move").goto_previous_end("@function.outer", "textobjects")
