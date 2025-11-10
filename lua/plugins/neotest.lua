@@ -7,6 +7,8 @@ return {
       "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
       "nvim-neotest/neotest-python",
+      "nvim-neotest/neotest-jest",
+      "marilari88/neotest-vitest",
       "mfussenegger/nvim-dap",
       "mfussenegger/nvim-dap-python",
     },
@@ -27,6 +29,10 @@ return {
             args = {"--log-level", "DEBUG"},
             runner = "pytest",
           }),
+          require("neotest-jest")({
+            jestCommand = "npx jest",
+          }),
+          require("neotest-vitest"),
         },
         discovery = {
           enabled = true,
