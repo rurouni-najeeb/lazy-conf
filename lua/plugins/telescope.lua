@@ -34,6 +34,17 @@ return {
       end,
       desc = "Find Git Files (including untracked)",
     },
+    -- Find git-ignored files
+    {
+      "<leader>fi",
+      function()
+        require("telescope.builtin").find_files({
+          hidden = true,
+          no_ignore = true,
+        })
+      end,
+      desc = "Find Git-ignored Files",
+    },
     -- Live grep including hidden files
     {
       "<leader>sA",
