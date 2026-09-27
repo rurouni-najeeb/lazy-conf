@@ -1,19 +1,6 @@
+-- Superseded by snacks.terminal, which LazyVim binds to <C-/> (float) and
+-- <C-_> in some terminals. The old <leader>t1 open_mapping also sat inside the
+-- <leader>t test prefix that the test.core extra now owns.
 return {
-  {
-    "akinsho/toggleterm.nvim",
-    version = "*",
-    config = function()
-      require("toggleterm").setup({
-        number = 1,
-        direction = "float", -- or "horizontal", "vertical", "tab"
-        open_mapping = [[<leader>t1]], -- default toggle key
-      })
-      function _G.set_terminal_keymaps()
-        local opts = { buffer = 0 }
-        vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], opts)
-      end
-
-      vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
-    end,
-  },
+  { "akinsho/toggleterm.nvim", enabled = false },
 }
