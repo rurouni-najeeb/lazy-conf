@@ -4,6 +4,13 @@
 vim.api.nvim_set_keymap("n", "<leader>th", ":split | terminal<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>tv", ":vsplit | terminal<CR>", { noremap = true, silent = true })
 
+-- LazyVim binds the float terminal to <C-/> (and <C-_>), but on a German layout
+-- "/" is Shift+7, so that chord is Ctrl+Shift+7 and most terminals send nothing
+-- nvim can read. <leader>T is layout-independent.
+vim.keymap.set("n", "<leader>T", function()
+  Snacks.terminal(nil, { cwd = LazyVim.root() })
+end, { desc = "Terminal (Root Dir)" })
+
 vim.keymap.set("n", "<leader>hc", function()
   vim.g.ai_completion_enabled = not vim.g.ai_completion_enabled
   if vim.g.ai_completion_enabled == nil then
@@ -17,4 +24,3 @@ vim.keymap.set("n", "<leader>hc", function()
     vim.notify("AI completions disabled", vim.log.levels.INFO)
   end
 end, { desc = "Toggle AI Completions" })
-
